@@ -7,10 +7,10 @@ import icomoon from '../../assets/fonts/icomoon.ttf';
 import selection from '../../assets/fonts/selection.json';
 
 export default function Icon(props) {
-  const [fontLoaded] = useFonts({ icomoon });
   const { name, size, color } = props;
   const CustomIcon = createIconSetFromIcoMoon(selection);
 
+  const [fontLoaded] = useFonts({ icomoon });
   if (!fontLoaded) {
     return null;
   }
