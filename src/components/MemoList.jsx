@@ -8,7 +8,9 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from './icon';
 
 export default function MemoList() {
+  // constructor
   const navigation = useNavigation();
+
   return (
 
     <View>
