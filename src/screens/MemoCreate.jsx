@@ -36,6 +36,7 @@ export default function MemoCreateScreen(props) {
     <KeyboardSafeView style={styles.container}>
       {/* <AppBar /> */}
 
+      {/* TODO:autoFocus android not enabled */}
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
