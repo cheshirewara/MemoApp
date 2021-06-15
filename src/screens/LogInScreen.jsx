@@ -9,6 +9,7 @@ import Button from '../components/Button';
 export default function LogInScreen(props) {
   // constructor
   const { navigation } = props;
+
   // screen object
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
