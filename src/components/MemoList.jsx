@@ -1,14 +1,14 @@
 import React from 'react';
 import {
-  View, Text, StyleSheet, TouchableOpacity, Alert,
+  View, Text, StyleSheet, TouchableOpacity, Alert, FlatList,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-// import { Feather } from '@expo/vector-icons';
-
 import {
   arrayOf, instanceOf, shape, string,
 } from 'prop-types';
-import { FlatList } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+// import { Feather } from '@expo/vector-icons';
+
+import { dateToString } from '../utils';
 import Icon from './icon';
 
 export default function MemoList(props) {
@@ -21,7 +21,7 @@ export default function MemoList(props) {
     return (
       <TouchableOpacity
         style={styles.memoListItem}
-        onPress={() => { navigation.navigate('MemoDetail'); }}
+        onPress={() => { navigation.navigate('MemoDetail', { id: item.id }); }}
       >
         <View>
           <Text
@@ -30,7 +30,11 @@ export default function MemoList(props) {
           >
             {item.bodyText}
           </Text>
-          <Text style={styles.memoListItemDate}>{String(item.updatedAt)}</Text>
+          <Text
+            style={styles.memoListItemDate}
+          >
+            {dateToString(item.updatedAt)}
+          </Text>
         </View>
 
         <TouchableOpacity
@@ -85,9 +89,9 @@ const styles = StyleSheet.create({
   memoDelete: {
     padding: 8,
   },
-  // memoListItemDate: {
-  //   fontSize: 12,
-  //   lineHeight: 16,
-  //   color: '#848484',
-  // },
+  memoListItemDate: {
+    fontSize: 12,
+    lineHeight: 16,
+    color: '#848484',
+  },
 });
