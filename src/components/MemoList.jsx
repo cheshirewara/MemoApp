@@ -16,7 +16,7 @@ export default function MemoList(props) {
   const { memos } = props;
   const navigation = useNavigation();
 
-  // function
+  // render function
   function renderItem({ item }) {
     return (
       <TouchableOpacity
